@@ -1,38 +1,53 @@
-.App {
-  text-align: center;
+body {background: #444;
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h2 {
+    font-family: 'Poppins', sans-serif;  
+    font-weight: bold;
+    text-indent: 1.6rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+a {
+  color: #fff;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+ul {
+  counter-reset: index;  
+  padding: 0;
+  max-width: 300px;
+}
+
+li {
+  counter-increment: index; 
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 12px 0;
+  box-sizing: border-box;
+  font-weight: bold;
 }
 
-.App-link {
-  color: #61dafb;
+li::before {
+  content: counters(index, ".", decimal-leading-zero);
+  font-size: 1.5rem;
+  text-align: right;
+  font-weight: bold;
+  min-width: 50px;
+  padding-right: 12px;
+  font-variant-numeric: tabular-nums;
+  align-self: flex-start;
+  background-image: linear-gradient(to bottom, aquamarine, orangered);
+  background-attachment: fixed;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+li + li {
+  border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+#upcoming {
+  text-indent: 2.5rem;
+  text-align: center;
 }
